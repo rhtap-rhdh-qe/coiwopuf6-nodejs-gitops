@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: coiwopuf6-nodejs-gitops
+  description: This is GitOps manifest for coiwopuf6-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: coiwopuf6-nodejs
+    janus-idp.io/tekton: coiwopuf6-nodejs 
+    backstage.io/kubernetes-id: coiwopuf6-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:coiwopuf6-nodejs
